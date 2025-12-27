@@ -68,8 +68,6 @@ int main() {
         case 5:
             printf("Введите x: ");
             scanf("%lf", &x);
-            while (getchar() != '\n');
-            derivative_at_point(x);
             break;
         case 0: printf("Выход\n");
             break;
