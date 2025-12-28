@@ -151,14 +151,16 @@ int save_table_to_file(double start, double step, int count, const char* filenam
 
     // Записываем данные в файл
     fprintf(file, "Таблица значений функции\n");
-    fprintf(file, "x\t\tf(x)\n");
+    fprintf(file, "________________________\n");
+    fprintf(file, "|   x    |    f(x)      |\n");
+    fprintf(file, "-------------------------\n");
 
     double x = start;
     for (int i = 0; i < count; i++) {
-        fprintf(file, "%g\t\t%g\n", x, f(x));
+        fprintf(file, "| % 5.2lf  | % 10.6g |\n", x, f(x));
         x += step;
     }
-
+    fprintf(file, "-------------------------\n");
     fclose(file);
     printf("Таблица сохранена в файл: %s\n", filename);
     return 1;
